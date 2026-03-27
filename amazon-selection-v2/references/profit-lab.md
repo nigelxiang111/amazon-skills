@@ -17,10 +17,21 @@
 
 【缓存检查】以下数据若已在对话中存在则跳过调用。
 
-【以下调用可并行执行】
-- `mcp__sorftime__product_detail`（有ASIN时）— 售价/类目/尺寸重量
-- `mcp__sorftime__ali1688_similar_product` — 采购价（取第1页，排除最高/最低，取25%~75%分位）
-- `mcp__sorftime__keyword_detail`（核心词）— CPC 参考
+**【卖家精灵优先】ASIN基础数据（有ASIN时）：**
+- `mcp__maijiajingl__asin_details` → 售价/类目/尺寸重量/BSR/月销量
+- **不可用 →** `mcp__sorftime__product_detail`
+
+**【卖家精灵优先】关键词/CPC（并行）：**
+- `mcp__maijiajingl__keyword_mining`（产品核心词）→ CPC参考（用于ACoS估算）
+- **不可用 →** `mcp__sorftime__keyword_detail`（核心词）
+
+**【卖家精灵独有】ACoS/市场广告数据：**
+- `mcp__maijiajingl__market_statistics`（对应类目）→ 查看广告竞争强度，辅助估算ACoS
+  - 有数据 → 结合 CPC 综合估算合理 ACoS
+  - 无数据 / 不可用 → 使用类目均值（服装/鞋包15%、电子8%、通用25%）
+
+**【sorftime 独有，不与卖家精灵重复】采购成本：**
+- `mcp__sorftime__ali1688_similar_product` → 采购价（取第1页，排除最高/最低，取25%~75%分位）
 
 ---
 
@@ -32,6 +43,11 @@
 3. 将输出的三情景结果、盈亏平衡、启动资金估算纳入报告
 
 **Python 不可用时**：按脚本中的注释公式逐项手算，结果完全等价。
+
+**ACoS填入规则（优先级）：**
+1. 卖家精灵 market_statistics 提供的广告竞争强度 + keyword_mining CPC → 综合估算
+2. 上述无数据 → sorftime keyword_detail CPC 估算
+3. 均无数据 → 用类目均值，脚本注释中标注「估算值」
 
 ---
 
@@ -57,4 +73,5 @@
 🔲 利润层SWOT
 🎯 可行性判断：[✅利润可行/⚡边际产品需优化/❌当前不可行]
    核心问题 + 最关键优化动作（供应链降本/定价调整/ACoS优化目标）
+📌 数据来源：售价[卖家精灵/sorftime] | CPC[卖家精灵/sorftime] | ACoS[卖家精灵估算/类目均值] | 1688[sorftime]
 ```

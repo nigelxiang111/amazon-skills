@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__sorftime__get_time",
+      "mcp__jina-mcp-server__search_web",
+      "Bash(python:*)"
+    ]
+  }
+}
