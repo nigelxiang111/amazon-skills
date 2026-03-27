@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/User/.claude/skills/skill-creator/**)",
+      "Bash(PYTHONIOENCODING=utf-8 PYTHONUTF8=1 python -m scripts.package_skill /d/data_nigel/选品分析v2/amazon-selection-v2)"
+    ]
+  }
+}
