@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(env)",
+      "Bash(grep -l \"mcp__maijiajingl__\" *.md)",
+      "Bash(cd:*)",
+      "Bash(python3 scripts/pnl.py)",
+      "Bash(python -m scripts.package_skill \"D:\\\\data_nigel\\\\亚马逊skills\\\\amazon-selection-v2\")",
+      "Read(//d/data_nigel/亚马逊skills/**)",
+      "Bash(python -c \"import zipfile, os; z = zipfile.ZipFile\\(''amazon-selection-v2.skill'', ''w'', zipfile.ZIP_DEFLATED\\); [z.write\\(os.path.join\\(r,f\\), os.path.relpath\\(os.path.join\\(r,f\\), ''amazon-selection-v2''\\)\\) for r,_,fs in os.walk\\(''amazon-selection-v2''\\) for f in fs if not r.startswith\\(''amazon-selection-v2\\\\.''\\) and not f.endswith\\(''.skill''\\)]; z.close\\(\\); print\\(''✓ Packaged''\\)\")",
+      "Bash(python -c \"import zipfile, os:*)",
+      "Bash(mkdir -p ~/.claude/skills)",
+      "Bash(cp \"D:\\\\data_nigel\\\\亚马逊skills\\\\amazon-selection-v2.skill\" ~/.claude/skills/)",
+      "Bash(unzip -q amazon-selection-v2.skill -d amazon-selection-v2)",
+      "mcp__sorftime__category_search_from_product_name",
+      "mcp__sorftime__category_report",
+      "mcp__sorftime__category_trend",
+      "mcp__sorftime__category_keywords",
+      "mcp__sorftime__product_search",
+      "mcp__sorftime__ali1688_similar_product",
+      "mcp__sorftime__keyword_detail",
+      "mcp__sorftime__tiktok_similar_product",
+      "mcp__sorftime__category_tree"
+    ]
+  }
+}

@@ -61,7 +61,7 @@ description: |
 | TikTok热度 | — | `tiktok_similar_product` | sorftime唯一 |
 | 潜力单品挖掘 | — | `potential_product` | sorftime唯一 |
 
-> 调用卖家精灵工具统一加前缀 `mcp__maijiajingl__`，例如 `mcp__maijiajingl__asin_details`
+> 调用卖家精灵工具统一加前缀 `mcp__卖家精灵__`，例如 `mcp__卖家精灵__asin_details`
 
 ---
 
@@ -131,3 +131,11 @@ FBA费用参考（无法获取时按此估算）：
 2. 修改 `TASK_NAME` 为分析对象名称（如「硅胶冰块托盘」）
 3. 写入 `/tmp/save_data.py` 并执行 `python3 /tmp/save_data.py`
 4. Excel 默认保存至桌面，文件名格式：`数据类型_YYYYMMDD_HHMMSS.xlsx`
+
+
+
+
+
+
+
+

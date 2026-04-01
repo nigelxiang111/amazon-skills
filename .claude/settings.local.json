@@ -3,7 +3,16 @@
     "allow": [
       "mcp__sorftime__get_time",
       "mcp__jina-mcp-server__search_web",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "mcp__sorftime__category_search_from_product_name",
+      "mcp__sorftime__product_search",
+      "mcp__sorftime__category_report",
+      "mcp__sorftime__category_trend",
+      "mcp__sorftime__keyword_detail",
+      "mcp__sorftime__ali1688_similar_product",
+      "Bash(\"D:\\\\data_nigel\\\\亚马逊skills\\\\amazon-selection-v3\\\\templates\\\\output_formats.md\":*)",
+      "Bash(python3 \"D:\\\\data_nigel\\\\亚马逊skills\\\\amazon-selection-v3\\\\scripts\\\\pnl.py\")",
+      "Bash(python3 \"D:\\\\data_nigel\\\\亚马逊skills\\\\amazon-selection-v3\\\\scripts\\\\scorer.py\")"
     ]
   }
 }
